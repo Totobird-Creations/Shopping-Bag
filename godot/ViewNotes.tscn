@@ -1,0 +1,268 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://ViewNotes.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Font-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Edit.png" type="Texture" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Close"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Darken:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.25 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu:anchor_left")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Menu:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 4, 1 ),
+"update": 0,
+"values": [ 1.0, 2.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Open"
+length = 0.25
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("Darken:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Menu:anchor_left")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ 1.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Menu:anchor_right")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.25 ),
+"transitions": PoolRealArray( 0.25, 1 ),
+"update": 0,
+"values": [ 2.0, 1.0 ]
+}
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="DynamicFont" id=11]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.0666667, 0.0666667, 0.0666667, 1 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.133333, 0.133333, 0.133333, 1 )
+
+[sub_resource type="DynamicFont" id=17]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.13, 0.13, 0.13, 0.5 )
+
+[node name="ViewNotes" type="Control"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Darken" type="ColorRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.74902 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/Close = SubResource( 1 )
+anims/Open = SubResource( 2 )
+
+[node name="Menu" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+margin_bottom = -70.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="Menu"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 100.0
+margin_top = -250.0
+margin_right = -100.0
+margin_bottom = 250.0
+color = Color( 0.2, 0.2, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Notes" type="TextEdit" parent="Menu/Background"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -70.0
+custom_styles/read_only = SubResource( 7 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/normal = SubResource( 9 )
+custom_styles/completion = SubResource( 10 )
+custom_fonts/font = SubResource( 11 )
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+readonly = true
+context_menu_enabled = false
+shortcut_keys_enabled = false
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buttons" type="Control" parent="Menu/Background"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = -60.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Okay" type="Button" parent="Menu/Background/Buttons"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -60.0
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+text = "Okay"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edit" type="Button" parent="Menu/Background/Buttons"]
+show_behind_parent = true
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -50.0
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 14 )
+custom_styles/disabled = SubResource( 15 )
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = SubResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="Menu/Background/Buttons/Edit"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Menu/Background/Buttons/Okay" to="." method="close"]
+[connection signal="pressed" from="Menu/Background/Buttons/Edit" to="." method="edit"]

@@ -1,0 +1,212 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Item.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Font-Regular.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/Checkbox.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Info.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Check.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Edit.png" type="Texture" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="DynamicFont" id=12]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=13]
+size = 24
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="StyleBoxEmpty" id=18]
+
+[node name="Item" type="Control"]
+anchor_right = 1.0
+margin_left = 10.0
+margin_right = -10.0
+margin_bottom = 100.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_min_size = Vector2( 556, 100 )
+mouse_filter = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0.2, 0.2, 0.2, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Check" type="Button" parent="."]
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = -10.0
+custom_styles/hover = SubResource( 1 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/disabled = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+toggle_mode = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Checkbox" type="TextureRect" parent="Check"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="Check" type="TextureRect" parent="Check"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource( 5 )
+expand = true
+stretch_mode = 6
+
+[node name="ItemName" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 50.0
+margin_top = 8.0
+margin_right = -505.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 6 )
+text = "Item Name"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Info" type="TextureRect" parent="ItemName"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 40.0
+margin_bottom = -10.0
+mouse_filter = 2
+texture = ExtResource( 4 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="ItemName/Info"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Amount" type="Label" parent="."]
+anchor_top = 0.5
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -12.0
+margin_right = 64.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 12 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unit" type="Label" parent="Amount"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 0.8
+margin_left = 2.0
+custom_fonts/font = SubResource( 13 )
+text = "unit"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tags" type="Label" parent="."]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = -12.0
+margin_bottom = -12.0
+custom_fonts/font = SubResource( 12 )
+custom_colors/font_color = Color( 0.498039, 0.498039, 0.498039, 1 )
+text = "Tags"
+align = 2
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Edit" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -45.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = 45.0
+custom_styles/hover = SubResource( 14 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = SubResource( 16 )
+custom_styles/disabled = SubResource( 17 )
+custom_styles/normal = SubResource( 18 )
+icon = ExtResource( 6 )
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="Check" to="." method="checkToggled"]
+[connection signal="pressed" from="ItemName/Info/Button" to="." method="viewNotes"]
+[connection signal="pressed" from="Edit" to="." method="edit"]
