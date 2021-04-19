@@ -160,6 +160,7 @@ func loadSaveData() -> void:
 		if (not value is String):
 			if (value == null): value = 'My List'
 			else: value = str(value)
+		instance.setListId(list)
 		instance.setListName(value)
 		instance.connect('selectList', self, 'selectList')
 		instance.connect('editList', self, 'openEditListMenu')
